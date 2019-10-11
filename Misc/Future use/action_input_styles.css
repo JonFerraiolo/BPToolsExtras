@@ -1,0 +1,156 @@
+#content_ai {
+	background: #e6e6e6;
+	height: 390px;
+	width: 592px;
+}
+#top_bg_ai {
+	background: url(images/action_input_bg_top2.jpg) left top no-repeat;
+	height: 3px;
+	width: 592px;
+}
+#bottom_bg_ai {
+	background: url(images/action_input_bg_bottom2.jpg) left top no-repeat;
+	height: 3px;
+	width: 592px;
+}
+#table_ai {
+	margin: 9px 18px auto 18px;
+}
+#table_ai td {
+	border-bottom: 2px solid white;
+}
+#key_area_title_td {
+	background: url(images/key_area_title.png) top left no-repeat;
+}
+#challenges_title_td {
+	background: url(images/challenges_title.png) top left no-repeat;
+	background-position: 0px 6px;
+}
+#actions_title_td {
+	background: url(images/actions_title.png) top left no-repeat;
+	background-position: 0px 6px;
+}
+#success_title_td {
+	background: url(images/success_title.png) top left no-repeat;
+	background-position: 0px 6px;
+	border-bottom: none;
+}
+#table_ai #success_title_td, #table_ai #success_input_td {
+	border-bottom: none;
+}
+.col1_ai {
+	width: 177px;
+	border-right: 2px solid white;
+}
+.col2_ai {
+	padding: 6px 0px 6px 7px
+}
+#key_area_input_td {
+	padding-top: 0px;
+}
+#success_input_td {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+#challenges_input_td {
+	
+}
+#U_apInput_KeyArea {
+	height: 56px;
+	width: 372px;
+}
+#high_priority {
+	background: url(images/high_priority_sharp.jpg) left top no-repeat;
+	height: 15px;
+	width: 72px;
+}
+#achievement_gap_div {
+	position: relative;
+}
+#U_apInput_AchieveGap {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#U_apInput_Challenges {
+	height: 72px;
+	width: 372px;
+}
+#U_apInput_Actions {
+	height: 56px;
+	width: 372px;
+}
+#actions_input_td .dijitTextBox {
+	width: 75px;
+}
+#priority_icon_actions {
+	background: url(images/priority_icon_faded.jpg) top left no-repeat;
+	height: 15px;
+	width: 15px;
+	display: inline-block;
+	margin-bottom: -4px;
+}
+#plus_button {
+	background: url(images/plus_button.jpg) top left no-repeat;
+	height: 17px;
+	width: 17px;
+	display: inline-block;
+	margin-bottom: -5px;
+}
+#plus_button {
+	float: right;
+}
+#label_date_ai {
+	font-family: Arial, sans-serif;
+}
+#U_apInput_Success {
+	height: 72px;
+	width: 372px;
+}
+#bottom_buttons_ai {
+	margin-right: 18px;
+	margin-top: 6px;
+	margin-left: 18px;
+}
+#cancel_button_ai {
+	float: left;
+}
+#save_and_close_button_ai, #save_and_new_button_ai {
+	float: right;
+}
+#save_and_close_button_ai {
+	margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

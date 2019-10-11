@@ -1,0 +1,125 @@
+/*******************************************************
+ * Copyright 2011, Karen Kang
+ * All rights reserved
+ * http://brandingpays.com, http://kang.com
+ *******************************************************/
+ 
+ /************* CONTENT AREA STYLES **************/
+/********* CONTENT AREA - General Styles **********/
+#content_eman {
+	margin-left: 20px;
+	margin-top: 14px;
+}
+/********** CONTENT AREA - Top Styles **********/
+.ecosystem_man_title {
+	background: url(images/ecosystem_man_title.png) no-repeat top left;
+	width: 885px;
+	height: 69px;
+	margin-bottom: 23px;
+	position: relative;
+}
+.ecosystem_man_title_input {
+	height: 25px;
+	width: 290px;
+	position: absolute;
+	top: 23px;
+	left: 416px;
+	border: #bbbbbb solid 1px;
+}
+/********* CONTENT AREA - Button Styles *******/
+#ecosystem_man_buttons {
+	margin-bottom: 8px;
+	width: 885px;
+	height: 18px;
+}
+#examples_button_eman {
+	margin-right: 2px;
+}
+#new_button_eman {
+	margin-right: 0;
+}
+#ecosystems_button {
+	background: url(images/ecosystems_button.png) no-repeat left top;
+	width: 101px;
+	height: 18px;
+	margin-right: 3px;
+}
+#ecosystem_management_div #ecosystems_button_label {
+	font-size: .95em;
+}
+#examples_button_eman {
+	width: 72px;
+	height: 18px;
+	background: url(images/examples_button.png) no-repeat left top;
+}
+#examples_button_div_eman {
+	margin-right: 1px;
+	margin-left: 1px;
+}
+#ecosystem_management_div #new_button_eman_label {
+	font-size: .95em;
+	margin-bottom: 1px;
+}
+/**Override Dojo styles for drop down buttons at top of webpage**/
+#ecosystems_button_label {
+	margin: 0;
+}
+#ecosystem_management_div #examples_button_eman_label {
+	font-size: .95em;
+}
+#ecosystems_button_div .ecosystems_dropdown {
+	width: 101px;
+	height: 18px;
+}
+#ecosystems_button_div .dijitDropDownButton {
+	/**margin-left: 408px;**/
+	margin-right: 3px;
+}
+#ecosystems_button_div .dijitDropDownButton, #ecosystems_button_div .dijitButtonNode {
+	width: 101px;
+}
+#ecosystems_button_div .examples_dropdown {
+	width: 72px;
+	height: 18px;
+}
+#examples_button_eman .dijitDropDownButton {
+	margin-right: 3px;
+}
+/**End overriding dojo styles**/
+/********* CONTENT AREA - Ecosystem Management *******/
+
+/********** BOTTOM OF PAGE ***********/
+/********** BOTTOM OF PAGE - Buttons *********/
+.eman_bottom_buttons {
+	width: 885px;
+}
+#eman_bottom_buttons_row1 {
+	margin-bottom: 6px;
+	height: 32px;
+}
+#eman_bottom_buttons_row1 .left_chevron_div {
+	margin-top: 5px;
+}
+#print_eco_man {
+	margin-right: 19px;
+}
+#email_eco_man {
+	margin-right: 10px;
+}
+#pdf_eco_man{
+	margin-right: 33px;
+}
+/*********** TOOLS TIPS *********/
+.q_button_eman_title {
+	position: absolute;
+	bottom: 4px;
+	right: 4px;
+}
+/******* EXAMPLES ********/
+
+
+
+
+
+
+

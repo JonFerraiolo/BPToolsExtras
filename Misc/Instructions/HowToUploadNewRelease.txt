@@ -1,0 +1,123 @@
+INSTRUCTIONS FOR HOW TO BUILD/DEPLOY A NEW VERSION OF THE TOOLS
+
+ * Copyright 2011, Karen Kang
+ * All rights reserved
+ * http://brandingpays.com, http://kang.com
+
+
+(INSTRUCTIONS BELOW NEED TO BE UPDATED WHEN SYSTEM 
+MOVES FROM BRANDINGPAYS.ORG TO BRANDINGPAYS.COM AND AGAIN
+WHEN IT GOES PUBLIC)
+
+----------------------------------------
+* TODO
+----------------------------------------
+* Why upload dojo-1.5.0-src with every release? Couldn't that be shared by all of the releases?--> The problem with this is that I sometimes make changes to the dojo code...
+
+----------------------------------------
+* STEP A: DOJO BUILD
+----------------------------------------
+
+A.1) Do an SVN update to get the latest sources
+A.2) Run the test plan to verify everything works correctly on localhost
+     across all target browser scenarios
+A.3) Run trunk/makeRelease.sh (see comment at top of file for instructions)
+
+----------------------------------------
+* STEP B: CREATE A ZIP FILE
+----------------------------------------
+
+B.1) Somewhere **OUTSIDE OF THE SVN TREE** (especially, not in trunk/),
+     create a new folder on your local machine named bpappReleases.
+     (Will already exist if you've followed these steps previously)
+B.2) Within bpappReleases, create a child folder for this release
+     named something like bpappYYYYMMDD (i.e., bpappReleases/bpappYYYYMMDD)
+B.3) Copy the following files from trunk/ into bpappReleases/bpappYYYYMMDD
+     * app
+     * dojo-release-1.5.0-src
+     * release
+     * All PHP and HTML files (BrandingPays.php, login.php, include_session_check.php, etc.) in trunk (not in subfolders)
+       (One way to make sure you get all of the PHP files is to click on the
+		Kind column in the Finder so that all of the PHP files are grouped together)
+B.4) Remove all of the .svn folders, *.ai and *.psd files
+     * In Terminal, use "cd" command to go into the bpappReleases/bpappYYYYMMDD folder
+     * Issue this command: find . -name '.svn' -exec rm -rf {} \;
+       (You might error messages about no such file or directory, but shouldn't be a problem)
+     * Issue this command: find . -name '*.ai' -exec rm -f {} \;
+     * Issue this command: find . -name '*.psd' -exec rm -f {} \;
+B.5) In Finder, go into bpappReleases
+B.6) In Finder, bring up context menu (right mouse button) for
+     the new folder (bpappYYYYMMDD) and issue a "Compress bpappYYYYMMDD" command
+     This will create file bpappReleases/bpappYYYYMMDD.zip
+
+----------------------------------------
+* STEP C: UPLOAD THE ZIP FILE, ADD NECESSARY TXT FILES
+----------------------------------------
+C.1) Go into ftp tool such as FileZilla
+C.2) Connect to brandingpays.org, entering username and password
+C.3) In local system pane (left side?), navigate to the parent folder
+     (i.e., the folder containing the bpappYYYYMMDD.zip file)
+C.4) In server pane (right side?), navigate into public_html/bpappReleases
+C.5) Upload the ZIP file so that the ZIP file ends up in
+     server folder bpappReleases. (In Filezilla, put mouse over bpappYYYYMMDD.zip
+C.6) If they do no exist already, in the public_html/users folder on the server create empty files: regcodes.txt, tools_email_list.txt, and TOU_list.txt. If admin_access.txt doesn't exist, copy it to users folder from users folder on your local machine. If it does exist, make sure it's up to date (it has the master password).
+C.7) If regcodes.txt is empty, generate a random code and add it to the file, notify BrandingPays staff so they can pass it on to their clients.
+----------------------------------------
+* STEP D: SSH TO INMOTION
+----------------------------------------
+(The following can be done in the host's GUI control panel instead)
+D.1) Open up a Terminal window
+
+D.2) In Terminal, issue command "ssh -l brandi7 brandingpays.com"
+     (You might get a prompt about server not recognized, say yes to prompt)
+     (Password is the same as the ftp password)
+	(inmotion key password: 1NR7lhpg)
+     (After this step, you are logged into InMotion server)
+     (If this fails, you might need to follow steps at:
+	  https://support.inmotionhosting.com/cgi-bin/kb.cgi?do=read&id=60&lang=en)
+D.3) On the InMotion server, issue these commands
+
+     cd public_html/bpappReleases
+     unzip bpappYYYYMMDD
+            // Should unzip the files, creating folder bpappYYYYMMDD
+     ls bpappYYYYMMDD
+            // Should see app/, BrandingPays.php, etc.
+D.4) Remove the ZIP file and the __MACOSX folder
+	  rm bpappYYYYMMDD.zip
+	  rm -rf __MACOSX
+
+----------------------------------------
+* STEP E: VERIFY UPLOADED APPLICATION
+----------------------------------------
+E.1) Open up a browser and go to
+     http://brandingpays.com/bpappReleases/bpappYYYYMMDD/BrandingPays.php
+E.2) Verify that the application works correctly
+
+----------------------------------------
+* STEP F: MAKE NEW SOFTWARE LIVE
+----------------------------------------
+
+!!! FOLLOWING STEPS NEEDS TO BE UPDATED !!!
+F.1) Using ssh on the InMotion server, issue these commands:
+     (assumes your shell is still in public_html/bpappReleases)
+
+     cd ..
+            // Should now be in folder public_html/
+     ls -l bpapp
+            // You should see a line that ends with something like
+            //       bpapp -> bpappReleases/bpapp20110130
+            // Copy/paste the "bpappYYYYMMDD" part into the next step
+     mv bpapp bpapp.old.bpappYYYYMMDD
+            // Move old symbolic link
+     ln -s bpappReleases/bpappYYYYMMDD bpapp
+            // Makes new symbolic link that points to new release
+ 
+F.2) Test the URL 
+     http://brandingpays.org/bpapp/BrandingPays.php
+
+F.3) If testing works fine, you are done.
+     Otherwise, if you need to restore old symbolic link:
+
+     rm bpapp
+     mv bpapp.old.bpappYYYYMMDD bpapp
+

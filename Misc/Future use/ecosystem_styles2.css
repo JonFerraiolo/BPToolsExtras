@@ -1,0 +1,140 @@
+/*******************************************************
+ * Copyright 2011, Karen Kang
+ * All rights reserved
+ * http://brandingpays.com, http://kang.com
+ *******************************************************/
+
+#ecosystem_form {
+	background: url(images/ecosystem.jpg) no-repeat left top;
+	height: 542px;
+	width: 768px;
+	margin: 20px auto 20px 20px;
+	padding-bottom: 20px;
+}
+#ecosystem_table {
+	width: 768px;
+}
+#brand_ecosystem_div td {
+	
+	vertical-align: top;
+}
+#ecosystem_table .ecosystem_row1 {
+	height: 59px;
+}
+.ecosystem_col1 {
+	height: 123px;
+	width: 269px;
+}
+.ecosystem_col2 {
+	width: 111px;
+}
+.ecosystem_col3 {
+	width: 112px;
+}
+.ecosystem_input {
+	border: #d2d2d4 solid 1px;
+	font-family: Arial, sans-serif;
+}
+.ecosystem_input_col1 {
+	width: 150px;
+	margin-left: 101px;
+}
+
+#ecosystem_row2_col1 .ecosystem_input_col1_1 {
+	margin-top: 16px;
+}
+#ecosystem_row2_col1 .ecosystem_input_col1_2 {
+	margin-top: 14px;
+}
+#ecosystem_row2_col1 .ecosystem_input_col1_3 {
+	margin-top: 13px;
+}
+
+#ecosystem_row3_col1 .ecosystem_input_col1_1 {
+	margin-top: 17px;
+}
+#ecosystem_row3_col1 .ecosystem_input_col1_2 {
+	margin-top: 14px;
+}
+#ecosystem_row3_col1 .ecosystem_input_col1_3 {
+	margin-top: 13px;
+}
+
+#ecosystem_row4_col1 .ecosystem_input_col1_1 {
+	margin-top: 18px;
+}
+#ecosystem_row4_col1 .ecosystem_input_col1_2 {
+	margin-top: 14px;
+}
+#ecosystem_row4_col1 .ecosystem_input_col1_3 {
+	margin-top: 13px;
+}
+
+#ecosystem_row5_col1 .ecosystem_input_col1_1 {
+	margin-top: 18px;
+}
+#ecosystem_row5_col1 .ecosystem_input_col1_2 {
+	margin-top: 14px;
+}
+#ecosystem_row5_col1 .ecosystem_input_col1_3 {
+	margin-top: 12px;
+}
+
+.ecosystem_input_col2, .ecosystem_input_col3 {
+	margin-top: 48px;
+	margin-left: 40px;
+}
+.ecosystem_input_col4 {
+	margin-left: 105px;
+	width: 147px;
+}
+
+#ecosystem_row2_col4 .ecosystem_input_col4_1 {
+	margin-top: 31px;
+}
+#ecosystem_row2_col4 .ecosystem_input_col4_2 {
+	margin-top: 17px;
+}
+#ecosystem_row3_col4 .ecosystem_input_col4_1 {
+	margin-top: 26px;
+}
+#ecosystem_row3_col4 .ecosystem_input_col4_2 {
+	margin-top: 18px;
+}
+#ecosystem_row4_col4 .ecosystem_input_col4_1 {
+	margin-top: 32px;
+}
+#ecosystem_row4_col4 .ecosystem_input_col4_2 {
+	margin-top: 18px;
+}
+#ecosystem_row5_col4 .ecosystem_input_col4_1 {
+	margin-top: 32px;
+}
+#ecosystem_row5_col4 .ecosystem_input_col4_2 {
+	margin-top: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

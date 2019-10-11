@@ -1,0 +1,86 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10740\viewh8540\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 This was the key to preventing dojo from getting confused and thinking the Selection cell was editable. When it's in _EditManager.js, I tell it to leave and then luckily it goes on to make the row selected:\
+dojox/grid/_EditManager.js line 33 cellfocus:\
+if(inCell.name=="Selection") \{\
+			return;\
+		\}\
+_____________\
+grid/_Builder.js line 75-79\
+var editInfoSelect = this.grid.editable && inCell.editable && inCell.name=='Selection' ? 'aria-readonly="true" editable="false"' : "";\
+				if (this.grid.editable && inCell.editable && inCell.name=='Selection') \{\
+					inCell.editable==false\
+				\}\
+______________\
+Make it so editing happens when you click on a cell once. I did this so that the the go to functionality wouldn't get set off when the user was trying to doubleclick to edit.\
+grid/_Grid.js line 252\
+singleClickEdit: true,\
+______________\
+Custom code that updates application data when user edits a cell in My Saved Work:\
+grid/DataGrid.js line 571 in doApplyCellEdit:\
+var gridStore = this.store;\
+		update_U_with_grid_data(inRowIndex, inAttrName, inValue, gridStore);\
+_____________\
+This is an area to note, because it helps determine the editable==true property of the Selection cells:\
+_props found in grid/cells/_base.js line 55\
+_____________\
+Added bug fix to FloatingPane's minimize method that destroys these blue transparent rectangles that sometimes appear after My Saved Work closes:\
+Begins line 222 in dojox/layout/FloatingPane.js:\
+minimize: function()\{\
+		// summary: Hide and dock the FloatingPane\
+		if(!this._isDocked)\{ this.hide(dojo.hitch(this,"_dock")); \} \
+		//BrandingPays addition: deals with transparent blue boxes that 			//sometimes appear\
+		//after the FloatingPane minimizes\
+		if(dojo.byId("BrandingPays")) \{\
+			destroy_blue_boxes();\
+		\}\
+	\},\
+____________\
+Firebug 1.7 not displaying dojo scripts properly in script panel (but according to this discussion the reason for this problem is Firefox 4: {\field{\*\fldinst{HYPERLINK "http://comments.gmane.org/gmane.comp.mozilla.firefox.firebug/19418"}}{\fldrslt http://comments.gmane.org/gmane.comp.mozilla.firefox.firebug/19418}}). The link gave this solution:\
+Original code (dojo/_base/_loader/bootstrap.js line 457):\
+return d.global.eval ? d.global.eval(scriptFragment) : eval(scriptFragment); 	// Object\
+Changed to:\
+return eval(scriptFragment);\
+_______________\
+IE9 is more standards compliant in some ways (according to stackoverflow) so it requires that document.createElement(string) has a string name of an element as its argument. Dojo used a string of html as the argument instead, which caused an error.\
+\
+dijit/_base/popup.js line 286\
+Old code:\
+\
+if(dojo.isIE)\{\
+				var burl = dojo.config["dojoBlankHtmlUrl"] || (dojo.moduleUrl("dojo", "resources/blank.html")+"") || "javascript:\\"\\"";\
+				var html="<iframe src='" + burl + "'"\
+					+ " style='position: absolute; left: 0px; top: 0px;"\
+					+ "z-index: -1; filter:Alpha(Opacity=\\"0\\");'>";\
+				iframe = dojo.doc.createElement(html);\
+\
+New code:\
+\
+////////////Repeat old code if it's IE but not IE9\
+if(dojo.isIE<9)\{\
+				var burl = dojo.config["dojoBlankHtmlUrl"] || (dojo.moduleUrl("dojo", "resources/blank.html")+"") || "javascript:\\"\\"";\
+				var html="<iframe src='" + burl + "'"\
+					+ " style='position: absolute; left: 0px; top: 0px;"\
+					+ "z-index: -1; filter:Alpha(Opacity=\\"0\\");'>";\
+				iframe = dojo.doc.createElement(html);\
+///////////Use standards compliant code for IE9			\
+			\}else if(dojo.isIE)\{\
+				var burl = dojo.config["dojoBlankHtmlUrl"] || (dojo.moduleUrl("dojo", "resources/blank.html")+"") || "javascript:\\"\\"";\
+				iframe = dojo.doc.createElement("iframe");\
+				iframe.setAttribute("src", burl);\
+				iframe.setAttribute('style', 'position: absolute; left: 0px; top: 0px; z-index: -1; filter:Alpha(Opacity=\\"0\\");');\
+_______________\
+Dojo sometimes imports content files (js, css) from http://ajax.googleapis.com/ajax/libs/dojo\'85 , but this is causing google chrome to show warnings about our ssl connection, because some of our content is generated not over ssl. So here's the change I made (need to test):\
+lines 112-117 in util/buildscripts/webbuild/server/js/build.js\
+		//Set up full CDN path.\
+		// BrandingPays change lines 113-117\
+		// Non-ssl old dojo code:\
+		//var xdDojoPath = "http://ajax.googleapis.com/ajax/libs/dojo/";\
+		// Ssl new BP code:\
+		var xdDojoPath = "https://ajax.googleapis.com/ajax/libs/dojo/";\
+\
+}

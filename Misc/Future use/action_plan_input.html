@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Action Plan Input</title>
+<link rel="stylesheet" type="text/css" href="action_input_styles.css" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<script type="text/javascript" src="dojo-release-1.5.0-src/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
+<script type="text/javascript" src="dojo-release-1.5.0-src/dijit/form/DateTextBox.js"></script>
+<script type="text/javascript">
+        dojo.require("dijit.form.DateTextBox");
+</script>
+<script type="text/javascript" src="action_plan_input.js"></script>
+<link rel="stylesheet" type="text/css" href="dojo-release-1.5.0-src/dijit/themes/claro/claro.css" />
+<style type="text/css">
+    .claro table.dijitCalendarContainer { margin: 25px auto; } #formatted
+    { text-align: center; }
+</style>
+<script type="text/javascript" src="modaldbox.js">
+</script>
+<link rel="stylesheet" href="modaldbox.css" type="text/css" />
+</head>
+<body style="background: white;" class="claro">
+
+<div id="top_bg_ai">
+</div>
+<div id="content_ai">
+	<table id="table_ai">
+		<tr>
+			<td id="key_area_title_td" class="col1_ai"></td>
+			<td id="key_area_input_td" class="col2_ai">
+				<textarea id="U_apInput_KeyArea"></textarea>
+				<div id="high_priority"></div>
+			</td>
+		</tr>
+		<tr>
+			<td id="challenges_title_td" class="col1_ai"></td>
+			<td id="challenges_input_td" class="col2_ai">
+				<div id="achievement_gap_div">
+					<select size="1" id="U_apInput_AchieveGap">
+						<option value=""></option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</div>
+				<textarea id="U_apInput_Challenges"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td id="actions_title_td" class="col1_ai"></td>
+			<td id="actions_input_td" class="col2_ai">
+				<textarea id="U_apInput_Actions"></textarea>
+				<label id="label_date_ai" for="date1">
+					Due Date:
+				</label>
+				<input type="text" name="date1" id="date1" dojoType="dijit.form.DateTextBox"
+				required="false" />
+				<div id="priority_icon_actions"></div>
+				<div id="plus_button"></div>
+			</td>
+		</tr>
+		<tr>
+			<td id="success_title_td" class="col1_ai"></td>
+			<td id="success_input_td" class="col2_ai">
+				<textarea id="U_apInput_Success"></textarea>
+			</td>
+		</tr>
+	</table>
+	<div id="bottom_buttons_ai">
+		<img id="cancel_button_ai" src="images/cancel_button.jpg" />
+		<img id="save_and_new_button_ai" src="images/save_and_new.png" />
+		<img id="save_and_close_button_ai" src="images/save_and_close.png" />
+	</div>
+</div>
+<div id="bottom_bg_ai">
+</div>
+
+</body>
+</html>

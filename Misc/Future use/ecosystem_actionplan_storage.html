@@ -1,0 +1,299 @@
+<link rel="stylesheet" type="text/css" href="app/ecosystem_model_styles.css" />
+<link rel="stylesheet" type="text/css" href="app/ecosystem_management_styles.css" />
+<link rel="stylesheet" type="text/css" href="app/action_plan_styles.css" />
+
+<li id="nav_list_top_ecosystem_li" class="ecosystem_li inactive_tab">
+
+			<div id="nav_list_top_ecosystem_dropdown" dojoType="dijit.form.DropDownButton" class="ecosystem_dropdown">
+
+				<span class="tab_text_e tab_text">ECOSYSTEM</span>
+
+				<div dojoType="dijit.Menu">
+
+					<div dojoType="dijit.MenuItem" label="ECOSYSTEM MODEL" class="dropdown_item ecosystem_model_option" 
+
+							onclick="NavListTopClick('ecosystem_model_div');"></div>
+
+					<div dojoType="dijit.MenuItem" label="ECOSYSTEM MANAGEMENT" class="dropdown_item ecosystem_management_option"
+
+						    onclick="NavListTopClick('ecosystem_management_div');"></div>
+
+				</div>
+
+			</div>
+
+		</li>
+
+		<li id="nav_list_top_action_li" class="action_li inactive_tab" onclick="NavListTopClick('action_plan_div')">
+
+			<span class="tab_text_ap tab_text">ACTION PLAN</span>
+
+		</li>
+
+<!--brandingpays.js setNavTab(), in var xref-->
+'ecosystem_model_div':'nav_list_top_ecosystem_li',
+'ecosystem_management_div':'nav_list_top_ecosystem_li',
+'action_plan_div':'nav_list_top_action_li'
+
+<!--brandingpays.js _UArray_List object:-->
+{ id:"U_ActionPlan_UArray", displayType:"block", choiceList:"action_plan_dropdown_choice_list", deleteList:"action_plan_dropdown_delete_list", wrapDiv:"action_plan_div"}
+
+<div id="ecosystem_model_div">
+	<div id="content_emod">
+		<div id="ecosystem_mod_buttons" class="top_buttons">
+			<!--
+			<img id="emod_history_button" alt="History" src="app/images/history_button.jpg" />
+			-->
+			<span id="ecosystem_mod_buttons_float" class="float_buttons">
+				<span id="ecosystem_models_button_div" class="dojo_button_span">
+					<span id="ecosystem_models_button" dojoType="dijit.form.DropDownButton">
+						<span>My Ecosystems</span>
+						<span class="ecosystem_models_dropdown ecosystems_dropdown" dojoType="dijit.Menu">
+							<span id="go_to_dropdown_emod" dojoType="dijit.PopupMenuItem">
+								<span>
+									Go to
+								</span>
+								<span dojoType="dijit.Menu">
+									<span dojoType="dijit.MenuItem">
+										Ecosystem Model 2
+									</span>
+									<span dojoType="dijit.MenuItem">
+										Ecosystem Model 3
+									</span>
+								</span>
+							</span>
+							<span dojoType="dijit.MenuItem" label="Make a duplicate" class="dropdown_item"></span>
+							<span dojoType="dijit.PopupMenuItem">
+								<span>
+									Compare with
+								</span>
+								<span dojoType="dijit.Menu">
+									<span dojoType="dijit.MenuItem">
+										Ecosystem Model 2
+									</span>
+									<span dojoType="dijit.MenuItem">
+										Ecosystem Model 3
+									</span>
+								</span>
+							</span>
+						</span>
+					</span>
+				</span>
+				<span id="examples_button_div_emod" class="dojo_button_span">
+					<button id="examples_button_emod" dojoType="dijit.form.DropDownButton">
+						<span>Examples</span>
+						<span class="examples_dropdown button_wrapper_div" dojoType="dijit.Menu">
+							<span dojoType="dijit.MenuItem" label="Example 1" class="dropdown_item example_menuitem"></span>
+							<span dojoType="dijit.MenuItem" label="Example 2" class="dropdown_item example_menuitem"></span>
+							<span dojoType="dijit.MenuItem" label="Example 3" class="dropdown_item example_menuitem"></span>
+						</span>
+					</button>
+				</span>
+				<span id="new_button_emod_div" class="dojo_button_span">
+					<button id="new_button_emod" class="new_button button_wrapper_div" dojoType="dijit.form.Button">New</button>
+				</span>
+			</span>
+		</div>
+		<div class="ecosystem_model_title">
+			<span class="title_text ecosystem_model_title_text">Ecosystem Model</span>
+			<input type="text" id="U_EcosystemModel_UArray_UTemplate_Title" class="ecosystem_model_title_input title_input" />
+			<div class="q_button q_button_emod_title" helpTopic="ecosystem_model_tool_tip"></div>
+		</div>
+		<div id="emod_bottom_buttons_row1" class="emod_bottom_buttons">
+			<div class="left_chevron_div">
+				<img src="app/images/previous_button.jpg" id="backto_brdstrt" />
+			</div>
+			<div class="right_chevron_div">
+				<img src="app/images/print_button.jpg" id="print_eco_mod" />
+				<img src="app/images/email_button.jpg" id="email_eco_mod" />
+				<img src="app/images/next_button.jpg" id="goto_ecoman" />
+			</div>
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="backto_brdstrt">
+			Brand Strategy
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="print_eco_mod">
+			Print Ecosystem Model
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="email_eco_mod">
+			Email Ecosystem Model
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="goto_ecoman">
+			Ecosystem Management
+		</div>
+	</div>
+	
+</div>
+
+<div id="ecosystem_management_div">
+	<div id="content_eman">
+		<div id="ecosystem_man_buttons" class="top_buttons">
+			<!--
+			<img id="eman_history_button" alt="History" src="app/images/history_button.jpg" />
+			-->
+			<span id="ecosystem_man_buttons_float" class="float_buttons">
+				<span id="ecosystems_button_div" class="dojo_button_span">
+					<span id="ecosystems_button" dojoType="dijit.form.DropDownButton">
+						<span>My Ecosystems</span>
+						<span class="ecosystem_man_dropdown ecosystems_dropdown" dojoType="dijit.Menu">
+							<span id="go_to_dropdown_eman" dojoType="dijit.PopupMenuItem">
+								<span>
+									Go to
+								</span>
+								<span dojoType="dijit.Menu">
+									<span dojoType="dijit.MenuItem">
+										Ecosystem 2
+									</span>
+									<span dojoType="dijit.MenuItem">
+										Ecosystem 3
+									</span>
+								</span>
+							</span>
+							<span dojoType="dijit.MenuItem" label="Make a duplicate" class="dropdown_item"></span>
+							<span dojoType="dijit.PopupMenuItem">
+								<span>
+									Compare with
+								</span>
+								<span dojoType="dijit.Menu">
+									<span dojoType="dijit.MenuItem">
+										Ecosystem 2
+									</span>
+									<span dojoType="dijit.MenuItem">
+										Ecosystem 3
+									</span>
+								</span>
+							</span>
+						</span>
+					</span>
+				</span>
+				<span id="examples_button_div_eman" class="dojo_button_span">
+					<button id="examples_button_eman" dojoType="dijit.form.DropDownButton">
+						<span>Examples</span>
+						<span class="examples_dropdown button_wrapper_div" dojoType="dijit.Menu">
+							<span dojoType="dijit.MenuItem" label="Example 1" class="dropdown_item example_menuitem"></span>
+							<span dojoType="dijit.MenuItem" label="Example 2" class="dropdown_item example_menuitem"></span>
+							<span dojoType="dijit.MenuItem" label="Example 3" class="dropdown_item example_menuitem"></span>
+						</span>
+					</button>
+				</span>
+				<span id="new_button_eman_div" class="dojo_button_span">
+					<button id="new_button_eman" class="new_button button_wrapper_div" dojoType="dijit.form.Button">New</button>
+				</span>
+			</span>
+		</div>
+		<div class="ecosystem_man_title">
+			<span class="title_text ecosystem_man_title_text">Ecosystem Management</span>
+			<input type="text" id="U_EcosystemManagement_UArray_UTemplate_Title" class="ecosystem_man_title_input title_input" />
+			<div class="q_button q_button_eman_title" helpTopic="ecosystem_man_tool_tip"></div>
+		</div>
+		<div id="eman_bottom_buttons_row1" class="eman_bottom_buttons">
+			<div class="left_chevron_div">
+				<img src="app/images/previous_button.jpg" id="backto_ecomod" />
+			</div>
+			<div class="right_chevron_div">
+				<img src="app/images/print_button.jpg" id="print_eco_man" />
+				<img src="app/images/email_button.jpg" id="email_eco_man" />
+				<img src="app/images/next_button.jpg" id="goto_actpln" />
+			</div>
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="backto_ecomod">
+			Ecosystem Model
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="print_eco_man">
+			Print Ecosystem Management
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="email_eco_man">
+			Email Ecosystem Management
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="goto_actpln">
+			Action Plan
+		</div>
+	</div>
+</div>
+
+<div id="action_plan_div">
+	<div id="content_ap">
+		<div id="action_plan_buttons" class="top_buttons">
+			<!--
+			<img id="emod_history_button" alt="History" src="app/images/history_button.jpg" />
+			-->
+			<span id="action_plan_buttons_float" class="float_buttons">
+				<span id="action_plans_button_div" class="dojo_button_span">
+					<span id="action_plans_button" dojoType="dijit.form.DropDownButton">
+						<span>My Action Plans</span>
+						<span class="action_plan_dropdown actions_plans_dropdown" dojoType="dijit.Menu">
+							<span id="go_to_dropdown_ap" dojoType="dijit.PopupMenuItem">
+								<span>
+									Go to
+								</span>
+								<span id="action_plan_dropdown_choice_list" dojoType="dijit.Menu">
+									<span dojoType="dijit.MenuItem">
+										Action Plan 2
+									</span>
+									<span dojoType="dijit.MenuItem">
+										Action Plan 3
+									</span>
+								</span>
+							</span>
+							<span onclick="UArray_duplicate('U_ActionPlan_UArray')" dojoType="dijit.MenuItem" label="Make a duplicate" class="dropdown_item"></span>
+							<span dojoType="dijit.PopupMenuItem">
+								<span>
+									Delete
+								</span>
+								<span id="action_plan_dropdown_delete_list" dojoType="dijit.Menu">
+								</span>
+							</span>
+						</span>
+					</span>
+				</span>
+				<span id="examples_button_div_ap" class="dojo_button_span">
+					<button id="examples_button_ap" dojoType="dijit.form.DropDownButton">
+						<span>Examples</span>
+						<span class="examples_dropdown button_wrapper_div" dojoType="dijit.Menu">
+							<span dojoType="dijit.MenuItem" label="Example 1" class="dropdown_item example_menuitem"></span>
+							<span dojoType="dijit.MenuItem" label="Example 2" class="dropdown_item example_menuitem"></span>
+							<span dojoType="dijit.MenuItem" label="Example 3" class="dropdown_item example_menuitem"></span>
+						</span>
+					</button>
+				</span>
+				<span id="new_button_ap_div" class="dojo_button_span">
+					<button onclick="UArray_new('U_ActionPlan_UArray')" id="new_button_ap" class="new_button button_wrapper_div" dojoType="dijit.form.Button">New</button>
+				</span>
+			</span>
+		</div>
+		<div id="U_ActionPlan_UArray">
+			<div id="U_ActionPlan_UArray_UTemplate" style="display:none">
+				<div class="action_plan_title">
+					<span class="title_text action_plan_title_text">Action Plan</span>
+					<input type="text" id="U_ActionPlan_UArray_UTemplate_Title" class="action_plan_title_input title_input" />
+					<div class="q_button q_button_ap_title" helpTopic="action_plan_tool_tip"></div>
+				</div>
+				
+				<!-- Other user data fields for Action Plan go here -->
+				
+			</div>
+		</div>
+		<div id="ap_bottom_buttons_row1" class="ap_bottom_buttons">
+			<div class="left_chevron_div">
+				<img src="app/images/previous_button.jpg" id="backto_ecoman" />
+			</div>
+			<div class="right_chevron_div">
+				<img src="app/images/print_button.jpg" id="print_act_plan" />
+				<img src="app/images/email_button.jpg" id="email_act_plan" />
+				<img src="app/images/next_button.jpg" id="goto_posnstmt" />
+			</div>
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="backto_ecoman">
+			Ecosystem Management
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="print_act_plan">
+			Print Action Plan
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="email_act_plan">
+			Email Action Plan
+		</div>
+		<div dojoType="dijit.Tooltip" connectId="goto_posnstmt">
+			Positioning Statement
+		</div>
+	</div>
+</div>
